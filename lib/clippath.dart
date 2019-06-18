@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:path/path.dart';
 // import 'nurse.dart';
+import 'list.dart';
+
 
 class WavyHeaderImage extends StatefulWidget {
   @override
@@ -64,7 +66,10 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                 top: 200.0,
                 width: 150.0,
                 height: 150.0,
-                child: InkWell(
+                child: InkWell(onTap: (){ Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp1()),
+                );},
                     child: Card(
                   elevation: 20.0,
                   color: Colors.white,

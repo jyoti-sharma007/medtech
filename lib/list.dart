@@ -82,8 +82,7 @@ class _ListPageState extends State<ListPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 14.0),
+                              padding: const EdgeInsets.only(top: 14.0),
                               child: Container(
                                 // alignment: Alignment.bottomCenter,
                                 width: 10.0,
@@ -94,7 +93,8 @@ class _ListPageState extends State<ListPage> {
                                 ),
                               ),
                             ),
-                            Container(padding:EdgeInsets.only(top:14.0) ,
+                            Container(
+                              padding: EdgeInsets.only(top: 14.0),
                               child: Text(
                                 lesson.name,
                                 style: TextStyle(
@@ -104,9 +104,11 @@ class _ListPageState extends State<ListPage> {
                               ),
                             ),
                             Container(
-                                padding: new EdgeInsets.only(top:2.0,right:2.0,bottom: 5.0),
+                                padding: new EdgeInsets.only(
+                                    top: 2.0, right: 2.0, bottom: 5.0),
                                 child: Image.asset(
-                                  'images/badge.png',height: 30.0,
+                                  'images/badge.png',
+                                  height: 30.0,
                                 )),
                           ],
                         ),
@@ -303,7 +305,6 @@ class _ListPageState extends State<ListPage> {
           icon: Image.asset('images/filter.png', height: 30.0),
           onPressed: () {
             showDialog(
-              
               context: context,
               builder: (BuildContext context) {
                 // return object of type Dialog
@@ -318,19 +319,28 @@ class _ListPageState extends State<ListPage> {
                         children: <Widget>[
                           Expanded(
                             child: FlatButton(
-                              child: Text('Reset',style: TextStyle(fontSize: 10.0),),
+                              child: Text(
+                                'Reset',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
                               onPressed: () {},
                             ),
                           ),
                           Expanded(
                             child: FlatButton(
-                              child: Text('Filter by',style: TextStyle(fontSize: 10.0),),
+                              child: Text(
+                                'Filter by',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
                               onPressed: () {},
                             ),
                           ),
                           Expanded(
                             child: FlatButton(
-                              child: Text('Apply',style: TextStyle(fontSize: 10.0),),
+                              child: Text(
+                                'Apply',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
                               onPressed: () {},
                             ),
                           ),
@@ -339,7 +349,11 @@ class _ListPageState extends State<ListPage> {
                     ),
                     content: ListView(
                       children: <Widget>[
-                        Text('Price Range',style: TextStyle(fontSize: 10.0,fontWeight: FontWeight.bold),),
+                        Text(
+                          'Price Range',
+                          style: TextStyle(
+                              fontSize: 10.0, fontWeight: FontWeight.bold),
+                        ),
                         SizedBox(height: 10.0),
                         RangeSlider(
                           min: 0.0,
@@ -387,30 +401,20 @@ class _ListPageState extends State<ListPage> {
                         Column(children: <Widget>[
                           CheckboxListTile(
                             value: true, activeColor: Colors.grey,
-                            title: Text('Text1'),
+                            title: Text(
+                              'Text1',
+                              style: TextStyle(fontSize: 10.0),
+                            ),
                             controlAffinity: ListTileControlAffinity
                                 .leading, //  <-- leading Checkbox
                             onChanged: (value) {},
                           ),
                           CheckboxListTile(
-                            value: true, activeColor: Colors.grey,
-                            title: Text('Text1'),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                        ]),
-                        Column(children: <Widget>[
-                          CheckboxListTile(
-                            value: true, activeColor: Colors.grey,
-                            title: Text('Text2'),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                          CheckboxListTile(
-                            value: true, activeColor: Colors.grey,
-                            title: Text('Text2'),
+                            value: false, activeColor: Colors.grey,
+                            title: Text(
+                              'Text1',
+                              style: TextStyle(fontSize: 10.0),
+                            ),
                             controlAffinity: ListTileControlAffinity
                                 .leading, //  <-- leading Checkbox
                             onChanged: (value) {},
@@ -419,14 +423,42 @@ class _ListPageState extends State<ListPage> {
                         Column(children: <Widget>[
                           CheckboxListTile(
                             value: true, activeColor: Colors.grey,
-                            title: Text('Text3'),
+                            title: Text(
+                              'Text2',
+                              style: TextStyle(fontSize: 10.0),
+                            ),
                             controlAffinity: ListTileControlAffinity
                                 .leading, //  <-- leading Checkbox
                             onChanged: (value) {},
                           ),
                           CheckboxListTile(
+                            value: false, activeColor: Colors.grey,
+                            title: Text(
+                              'Text2',
+                              style: TextStyle(fontSize: 10.0),
+                            ),
+                            controlAffinity: ListTileControlAffinity
+                                .leading, //  <-- leading Checkbox
+                            onChanged: (value) {},
+                          ),
+                        ]),
+                        Column(children: <Widget>[
+                          CheckboxListTile(
                             value: true, activeColor: Colors.grey,
-                            title: Text('Text3'),
+                            title: Text(
+                              'Text3',
+                              style: TextStyle(fontSize: 10.0),
+                            ),
+                            controlAffinity: ListTileControlAffinity
+                                .leading, //  <-- leading Checkbox
+                            onChanged: (value) {},
+                          ),
+                          CheckboxListTile(
+                            value: false, activeColor: Colors.grey,
+                            title: Text(
+                              'Text3',
+                              style: TextStyle(fontSize: 10.0),
+                            ),
                             controlAffinity: ListTileControlAffinity
                                 .leading, //  <-- leading Checkbox
                             onChanged: (value) {},
@@ -434,28 +466,43 @@ class _ListPageState extends State<ListPage> {
                         ]),
                         Text('Star Rating',
                             style: TextStyle(
-                                fontSize: 23, fontWeight: FontWeight.bold)),
+                                fontSize: 10, fontWeight: FontWeight.bold)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
                             Expanded(
                               child: RaisedButton(
                                 color: Colors.white,
-                                child: Text('3 star'),
+                                child: Text(
+                                  '3 star',
+                                  style: TextStyle(
+                                      fontSize: 10.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
                                 onPressed: () {},
                               ),
                             ),
                             Expanded(
                               child: RaisedButton(
                                 color: Colors.white,
-                                child: Text('4 star'),
+                                child: Text(
+                                  '4 star',
+                                  style: TextStyle(
+                                      fontSize: 10.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
                                 onPressed: () {},
                               ),
                             ),
                             Expanded(
                               child: RaisedButton(
                                 color: Colors.white,
-                                child: Text('5 star'),
+                                child: Text(
+                                  '5 star',
+                                  style: TextStyle(
+                                      fontSize: 10.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
                                 onPressed: () {},
                               ),
                             )
@@ -463,7 +510,7 @@ class _ListPageState extends State<ListPage> {
                         ),
                         Text('Experience',
                             style: TextStyle(
-                                fontSize: 23, fontWeight: FontWeight.bold)),
+                                fontSize: 10.0, fontWeight: FontWeight.bold)),
                         RangeSlider(
                           min: 0.0,
                           max: 10.0,
