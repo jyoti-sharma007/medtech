@@ -30,8 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: WavyHeaderImage(),
       floatingActionButton: Container(
-        height: 80.0,
-        width: 80.0,
+        height: MediaQuery.of(context).size.height * 0.15,
+        width: MediaQuery.of(context).size.width * 0.15,
         child: FittedBox(
           child: FloatingActionButton(
               child: Column(
@@ -61,15 +61,17 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'images/start.png',
-              height: 30.0,
+              height: MediaQuery.of(context).size.width * 0.05,
             ),
             title: new Text('Favorites'),
           ),
           BottomNavigationBarItem(
-              icon: Image.asset('images/reports.png', height: 30.0),
+              icon: Image.asset('images/reports.png',
+               height: MediaQuery.of(context).size.width * 0.05),
               title: new Text('Reports')),
           BottomNavigationBarItem(
-              icon: Image.asset('images/patients.png', height: 30.0),
+              icon: Image.asset('images/patients.png', 
+              height: MediaQuery.of(context).size.width * 0.05),
               title: new Text('Patients')),
         ],
       ),

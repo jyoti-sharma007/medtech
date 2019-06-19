@@ -98,7 +98,7 @@ class _ListPageState extends State<ListPage> {
                               child: Text(
                                 lesson.name,
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 17,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -312,12 +312,14 @@ class _ListPageState extends State<ListPage> {
                   AlertDialog(
                     title: ConstrainedBox(
                       constraints: BoxConstraints(
-                          maxWidth: MediaQuery.of(context).size.width),
+                          maxWidth: MediaQuery.of(context).size.width,
+                        ),
+
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         // alignment: WrapAlignment.start,
                         children: <Widget>[
-                          Expanded(
+                          Flexible(
                             child: FlatButton(
                               child: Text(
                                 'Reset',
@@ -326,7 +328,7 @@ class _ListPageState extends State<ListPage> {
                               onPressed: () {},
                             ),
                           ),
-                          Expanded(
+                          Flexible(
                             child: FlatButton(
                               child: Text(
                                 'Filter by',
@@ -335,7 +337,7 @@ class _ListPageState extends State<ListPage> {
                               onPressed: () {},
                             ),
                           ),
-                          Expanded(
+                          Flexible(
                             child: FlatButton(
                               child: Text(
                                 'Apply',
@@ -399,20 +401,23 @@ class _ListPageState extends State<ListPage> {
                           height: 10.0,
                         ),
                         Column(children: <Widget>[
-                          CheckboxListTile(
-                            value: true, activeColor: Colors.grey,
-                            title: Text(
-                              'Text1',
-                              style: TextStyle(fontSize: 10.0),
+                          Padding(
+                            padding: const EdgeInsets.only(left:2.0),
+                            child: CheckboxListTile(
+                              value: true, activeColor: Colors.grey,
+                              title: Text(
+                                'Text1',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                              controlAffinity: ListTileControlAffinity
+                                  .leading, //  <-- leading Checkbox
+                              onChanged: (value) {},
                             ),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
                           ),
                           CheckboxListTile(
                             value: false, activeColor: Colors.grey,
                             title: Text(
-                              'Text1',
+                              'Text',
                               style: TextStyle(fontSize: 10.0),
                             ),
                             controlAffinity: ListTileControlAffinity

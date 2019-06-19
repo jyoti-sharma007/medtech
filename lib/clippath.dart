@@ -32,22 +32,22 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
             ClipPath(
               child: Container(
                 color: Colors.blue,
-                height: 350.0,
+                height: 300.0,
                 width: MediaQuery.of(context).size.width,
               ),
               clipper: BottomWaveClipper(),
             ),
             Positioned(
-              left: 30.0,
-              top: 60.0,
+              left: 20.0,
+              top: 55.0,
               child: Icon(Icons.menu, color: Colors.white),
-              height: 60.0,
+              height: MediaQuery.of(context).size.width * 0.15,
             ),
             Positioned(
-              left: 80.0,
-              top: 70.0,
-              height: 50.0,
-              width: 300.0,
+              left: 70.0,
+              top: 60.0,
+              height: MediaQuery.of(context).size.width * 0.15,
+              width: MediaQuery.of(context).size.width * 0.75,
               child: Container(padding: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -63,9 +63,9 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
             ),
             Positioned(
                 left: 30.0,
-                top: 200.0,
-                width: 150.0,
-                height: 150.0,
+                top: 150.0,
+                width: 150,
+                height: 150,
                 child: InkWell(onTap: (){ Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyApp1()),
@@ -88,7 +88,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                 ))),
             Positioned(
                 left: 210.0,
-                top: 200.0,
+                top: 150.0,
                 width: 150.0,
                 height: 150.0,
                 child: Container(
@@ -114,12 +114,13 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                 )),
           ],
         ),
-        SizedBox(
-          height: 20.0,
-        ),
+        // SizedBox(
+        //   height: 30.0,
+        // ),
         Row(
           children: <Widget>[
             Container(
+              
               height: 230.0,
               width: 210.0,
               padding: EdgeInsets.all(30.0),
