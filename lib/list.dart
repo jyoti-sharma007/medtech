@@ -310,229 +310,247 @@ class _ListPageState extends State<ListPage> {
                 // return object of type Dialog
                 return Stack(children: <Widget>[
                   AlertDialog(
-                    title: ConstrainedBox(
-                      constraints: BoxConstraints(
-                          maxWidth: MediaQuery.of(context).size.width,
-                        ),
-
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        // alignment: WrapAlignment.start,
+                    content: Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          Flexible(
-                            child: FlatButton(
-                              child: Text(
-                                'Reset',
-                                style: TextStyle(fontSize: 10.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Expanded(
+                                child: FlatButton(
+                                  child: Text(
+                                    'Reset',
+                                    style: TextStyle(fontSize: 10.0),
+                                  ),
+                                  onPressed: () {},
+                                ),
                               ),
-                              onPressed: () {},
+                              Expanded(
+                                child: FlatButton(
+                                  child: Text(
+                                    'Filter by',
+                                    style: TextStyle(fontSize: 10.0),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                              Expanded(
+                                child: FlatButton(
+                                  child: Text(
+                                    'Apply',
+                                    style: TextStyle(
+                                        fontSize: 10.0, color: Colors.blue),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ],
+                          ),
+                         
+                            ListTile(
+                              leading: Text(
+                                'Price Range',
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    fontSize: 10.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                    
+                       RangeSlider(
+                            min: 0.0,
+                            max: 1000.0,
+                            lowerValue: _lowerValue,
+                            upperValue: _upperValue,
+                            divisions: 5,
+                            showValueIndicator: true,
+                            valueIndicatorMaxDecimals: 1,
+                            onChanged:
+                                (double newLowerValue, double newUpperValue) {
+                              setState(() {
+                                _lowerValue = newLowerValue;
+                                _upperValue = newUpperValue;
+                              });
+                            },
+                          ),
+
+                          ListTile(
+                            leading: Text(
+                              'Nurse Type',
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 10.0),
                             ),
                           ),
-                          Flexible(
-                            child: FlatButton(
-                              child: Text(
-                                'Filter by',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                              onPressed: () {},
-                            ),
+                          CheckboxListTile(
+                            value: true, activeColor: Colors.grey,
+                            title: Text('Certified'),
+                            controlAffinity: ListTileControlAffinity
+                                .leading, //  <-- leading Checkbox
+                            onChanged: (value) {},
                           ),
-                          Flexible(
-                            child: FlatButton(
-                              child: Text(
-                                'Apply',
+                          ListTile(
+                            leading: Text('Specialisation',
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.bold)),
+                          ),
+                          Row(children: <Widget>[
+                            Flexible(
+                              child: Row(children: <Widget>[
+                                Checkbox(
+                                    value: true,
+                                    activeColor: Colors.grey,
+                                    onChanged: (value) {
+                                      setState(() {});
+                                    }),
+                                Text(
+                                  'Text1',
+                                  style: TextStyle(fontSize: 10.0),
+                                ),
+                              ]),
+                            ),
+                            Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text2',
                                 style: TextStyle(fontSize: 10.0),
                               ),
-                              onPressed: () {},
+                            ]),
+                            Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text3',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
+                          ]),
+                          Row(children: <Widget>[
+                            Flexible(
+                              child: Row(children: <Widget>[
+                                Checkbox(
+                                    value: true,
+                                    activeColor: Colors.grey,
+                                    onChanged: (value) {
+                                      setState(() {});
+                                    }),
+                                Text(
+                                  'Text1',
+                                  style: TextStyle(fontSize: 10.0),
+                                ),
+                              ]),
                             ),
+                            Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text2',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
+                            Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text3',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
+                          ]),
+                          ListTile(
+                            leading: Text('Star Rating',
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.bold)),
+                          ),
+                        
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Flexible(
+                                child: RaisedButton(
+                                  color: Colors.white,
+                                  child: Text(
+                                    '3 star',
+                                    style: TextStyle(
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                              Flexible(
+                                child: RaisedButton(
+                                  color: Colors.white,
+                                  child: Text(
+                                    '4 star',
+                                    style: TextStyle(
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                              Flexible(
+                                child: RaisedButton(
+                                  color: Colors.white,
+                                  child: Text(
+                                    '5 star',
+                                    style: TextStyle(
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              )
+                            ],
+                          ),
+                          ListTile(
+                            leading: Text('Experience',
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                    fontSize: 10.0,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                                
+                          RangeSlider(
+                            min: 0.0,
+                            max: 10.0,
+                            lowerValue: _lowerAge,
+                            upperValue: _upperAge,
+                            divisions: 5,
+                            showValueIndicator: true,
+                            valueIndicatorMaxDecimals: 1,
+                            onChanged:
+                                (double newLowerValue, double newUpperValue) {
+                              setState(() {
+                                _lowerAge = newLowerValue;
+                                _upperAge = newUpperValue;
+                              });
+                            },
                           ),
                         ],
                       ),
-                    ),
-                    content: ListView(
-                      children: <Widget>[
-                        Text(
-                          'Price Range',
-                          style: TextStyle(
-                              fontSize: 10.0, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10.0),
-                        RangeSlider(
-                          min: 0.0,
-                          max: 1000.0,
-                          lowerValue: _lowerValue,
-                          upperValue: _upperValue,
-                          divisions: 5,
-                          showValueIndicator: true,
-                          valueIndicatorMaxDecimals: 1,
-                          onChanged:
-                              (double newLowerValue, double newUpperValue) {
-                            setState(() {
-                              _lowerValue = newLowerValue;
-                              _upperValue = newUpperValue;
-                            });
-                          },
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(
-                          'Nurse Type',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 10.0),
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        CheckboxListTile(
-                          value: true, activeColor: Colors.grey,
-                          title: Text('Certified'),
-                          controlAffinity: ListTileControlAffinity
-                              .leading, //  <-- leading Checkbox
-                          onChanged: (value) {},
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text('Specialisation',
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Column(children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(left:2.0),
-                            child: CheckboxListTile(
-                              value: true, activeColor: Colors.grey,
-                              title: Text(
-                                'Text1',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                              controlAffinity: ListTileControlAffinity
-                                  .leading, //  <-- leading Checkbox
-                              onChanged: (value) {},
-                            ),
-                          ),
-                          CheckboxListTile(
-                            value: false, activeColor: Colors.grey,
-                            title: Text(
-                              'Text1 ',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                        ]),
-                        Column(children: <Widget>[
-                          CheckboxListTile(
-                            value: true, activeColor: Colors.grey,
-                            title: Text(
-                              'Text2',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                          CheckboxListTile(
-                            value: false, activeColor: Colors.grey,
-                            title: Text(
-                              'Text2',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                        ]),
-                        Column(children: <Widget>[
-                          CheckboxListTile(
-                            value: true, activeColor: Colors.grey,
-                            title: Text(
-                              'Text3',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                          CheckboxListTile(
-                            value: false, activeColor: Colors.grey,
-                            title: Text(
-                              'Text3',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                            controlAffinity: ListTileControlAffinity
-                                .leading, //  <-- leading Checkbox
-                            onChanged: (value) {},
-                          ),
-                        ]),
-                        Text('Star Rating',
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Expanded(
-                              child: RaisedButton(
-                                color: Colors.white,
-                                child: Text(
-                                  '3 star',
-                                  style: TextStyle(
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                            Expanded(
-                              child: RaisedButton(
-                                color: Colors.white,
-                                child: Text(
-                                  '4 star',
-                                  style: TextStyle(
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                            Expanded(
-                              child: RaisedButton(
-                                color: Colors.white,
-                                child: Text(
-                                  '5 star',
-                                  style: TextStyle(
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onPressed: () {},
-                              ),
-                            )
-                          ],
-                        ),
-                        Text('Experience',
-                            style: TextStyle(
-                                fontSize: 10.0, fontWeight: FontWeight.bold)),
-                        RangeSlider(
-                          min: 0.0,
-                          max: 10.0,
-                          lowerValue: _lowerAge,
-                          upperValue: _upperAge,
-                          divisions: 5,
-                          showValueIndicator: true,
-                          valueIndicatorMaxDecimals: 1,
-                          onChanged:
-                              (double newLowerValue, double newUpperValue) {
-                            setState(() {
-                              _lowerAge = newLowerValue;
-                              _upperAge = newUpperValue;
-                            });
-                          },
-                        ),
-                      ],
                     ),
                   ),
                   Positioned(

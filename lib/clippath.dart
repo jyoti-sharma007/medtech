@@ -87,7 +87,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                   ),
                 ))),
             Positioned(
-                left: 210.0,
+                left: 200.0,
                 top: 150.0,
                 width: 150.0,
                 height: 150.0,
