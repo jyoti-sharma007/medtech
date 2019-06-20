@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'clippath.dart';
 import 'list.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
+      FlutterStatusbarcolor.setStatusBarColor(Colors.white);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Wavy image mask',

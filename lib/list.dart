@@ -417,7 +417,7 @@ class _ListPageState extends State<ListPage> {
                           CheckboxListTile(
                             value: false, activeColor: Colors.grey,
                             title: Text(
-                              'Text',
+                              'Text1 ',
                               style: TextStyle(fontSize: 10.0),
                             ),
                             controlAffinity: ListTileControlAffinity

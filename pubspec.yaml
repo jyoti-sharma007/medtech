@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_range_slider:
   flutter_responsive_screen:
+  flutter_statusbarcolor:
   folding_cell:
 
 
