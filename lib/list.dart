@@ -52,7 +52,7 @@ class _ListPageState extends State<ListPage> {
                     decoration: BoxDecoration(
                         // borderRadius: BorderRadius.circular(15.0),
                         image: DecorationImage(
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                       image: AssetImage(lesson.image),
                     )),
                     child: Stack(
