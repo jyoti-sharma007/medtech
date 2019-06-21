@@ -66,7 +66,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                  top: 150.0,left: 30.0,right: 30.0,bottom: 30.0),
               child: Container(
                   width: MediaQuery.of(context).size.width * 0.40,
-                  height: MediaQuery.of(context).size.height * 0.30,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   child: InkWell(
                       onTap: () {
                         Navigator.push(
@@ -96,7 +96,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                   top: 150.0,left: 190.0,right: 30.0,bottom: 30.0),
               child: Container(
                   width: MediaQuery.of(context).size.width * 0.55,
-                  height: MediaQuery.of(context).size.height * 0.30,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   child: Container(
                     child: Card(
                       elevation: 20.0,
@@ -121,10 +121,10 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
             ),
             Padding(
                 padding:
-                    const EdgeInsets.only(top: 350.0,left: 190.0,right: 30.0),
+                    const EdgeInsets.only(top: 340.0,left: 190.0,right: 30.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.55,
-                  height: MediaQuery.of(context).size.height * 0.30,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   child: Container(
                     child: Card(
                       elevation: 20.0,
@@ -147,10 +147,10 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
                   ),
                 )),
             Padding(
-              padding: const EdgeInsets.only(top: 350.0, left: 30, right: 20.0),
+              padding: const EdgeInsets.only(top: 340.0, left: 30, right: 20.0),
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.40,
-                height: MediaQuery.of(context).size.height * 0.30,
+                height: MediaQuery.of(context).size.height * 0.28,
                 child: Card(
                   elevation: 20.0,
                   color: Colors.white,
