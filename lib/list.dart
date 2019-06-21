@@ -580,25 +580,72 @@ class _ListPageState extends State<ListPage> {
         )
       ],
     );
-    final makeBottom = Container(
-      child: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              'images/start.png',
-              height: 30.0,
-            ),
-            title: new Text('Favorites'),
+    final makeBottom = BottomAppBar(
+            child: Container(
+          height: 80.0,
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+               Container(height: 70.0,width: 70.0,
+                 child: FloatingActionButton(
+                    onPressed: () {},
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.home,
+                         
+                        ),
+                        Text(
+                          "Home",
+                          style: TextStyle(
+                              fontSize: 10.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+               ),
+              
+              Padding(padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                  children: <Widget>[
+                    Image.asset(
+                      'images/start.png',
+                      height: 25.0,
+                    ),
+                    Text('Favorites', style: TextStyle(color:Colors.grey[600])),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('images/reports.png', height: 25.0),
+                    Text('Reports', style: TextStyle(color: Colors.grey[600]))
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('images/patients.png', height: 25.0),
+                    Text(
+                      'Patients',
+                      style: TextStyle(color: Colors.grey[600]),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-          BottomNavigationBarItem(
-              icon: Image.asset('images/reports.png', height: 30.0),
-              title: new Text('Reports')),
-          BottomNavigationBarItem(
-              icon: Image.asset('images/patients.png', height: 30.0),
-              title: new Text('Patients')),
-        ],
-      ),
-    );
+        ));
 
     return Scaffold(
       backgroundColor: Colors.grey[100],
