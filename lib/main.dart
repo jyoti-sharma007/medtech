@@ -41,37 +41,39 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-               Container(height: 70.0,width: 70.0,
-                 child: FloatingActionButton(
-                    onPressed: () {},
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.home,
-                         
-                        ),
-                        Text(
-                          "Home",
-                          style: TextStyle(
-                              fontSize: 10.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
+              Container(
+                height: 70.0,
+                width: 70.0,
+                child: FloatingActionButton(
+                  onPressed: () {},
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.home,
+                      ),
+                      Text(
+                        "Home",
+                        style: TextStyle(
+                            fontSize: 10.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
                   ),
-               ),
-              
-              Padding(padding: const EdgeInsets.all(10.0),
-                              child: Column(
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
                   children: <Widget>[
                     Image.asset(
                       'images/start.png',
                       height: 25.0,
                     ),
-                    Text('Favorites', style: TextStyle(color:Colors.grey[600])),
+                    Text('Favorites',
+                        style: TextStyle(color: Colors.grey[600])),
                   ],
                 ),
               ),
@@ -101,4 +103,3 @@ class _MyHomePageState extends State<MyHomePage> {
         )));
   }
 }
-

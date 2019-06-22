@@ -27,6 +27,8 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+  bool pressed = false;
+
   List lessons;
   double _lowerValue = 200.0;
   double _upperValue = 400.0;
@@ -47,8 +49,8 @@ class _ListPageState extends State<ListPage> {
               Expanded(
                   flex: 2,
                   child: Container(
-                    height: 150.0,
-                    width: 250.0,
+                    height: 190.0,
+                    width: 260.0,
                     decoration: BoxDecoration(
                         // borderRadius: BorderRadius.circular(15.0),
                         image: DecorationImage(
@@ -62,60 +64,64 @@ class _ListPageState extends State<ListPage> {
                           bottom: 10.0,
                           child: Image.asset(
                             "images/play-button.png",
-                            width: 40.0,
-                            height: 40.0,
+                            width: 30.0,
+                            height: 30.0,
                           ),
                         ),
                       ],
                     ),
                   )),
               Expanded(
-                flex: 3,
-                child: Padding(
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Padding(
-                              padding: const EdgeInsets.only(top: 14.0),
-                              child: Container(
-                                // alignment: Alignment.bottomCenter,
-                                width: 10.0,
-                                height: 10.0,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.green,
-                                ),
+                  flex: 3,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 20.0, left: 6.0, bottom: 10.0),
+                            child: Container(
+                              // alignment: Alignment.bottomCenter,
+                              width: 08.0,
+                              height: 08.0,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.green,
                               ),
                             ),
-                            Container(
-                              padding: EdgeInsets.only(top: 14.0),
-                              child: Text(
-                                lesson.name,
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(
+                                top: 14.9, left: 4.0, bottom: 10.0),
+                            child: Text(
+                              lesson.name,
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
-                            Container(
-                                padding: new EdgeInsets.only(
-                                    top: 2.0, right: 2.0, bottom: 5.0),
-                                child: Image.asset(
-                                  'images/badge.png',
-                                  height: 30.0,
-                                )),
-                          ],
+                          ),
+                          Container(
+                              padding: new EdgeInsets.only(
+                                  bottom: 14.0, right: 8.0, left: 43.0),
+                              child: Image.asset(
+                                'images/badge.png',
+                                height: 20.0,
+                              )),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 3.0,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 20.0,
                         ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Row(
+                        child: Row(
                           children: <Widget>[
                             Image.asset(
                               'images/rupee.png',
@@ -137,10 +143,13 @@ class _ListPageState extends State<ListPage> {
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ],
                         ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Row(
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20.0),
+                        child: Row(
                           children: <Widget>[
                             Icon(
                               Icons.star,
@@ -166,10 +175,13 @@ class _ListPageState extends State<ListPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 3.0,
-                        ),
-                        Row(
+                      ),
+                      SizedBox(
+                        height: 3.0,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20.0),
+                        child: Row(
                           children: <Widget>[
                             Icon(
                               Icons.location_on,
@@ -197,10 +209,13 @@ class _ListPageState extends State<ListPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 3.0,
-                        ),
-                        Row(
+                      ),
+                      SizedBox(
+                        height: 3.0,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20.0),
+                        child: Row(
                           children: <Widget>[
                             Image.asset('images/doctor-bag.png', height: 10.0),
                             Padding(
@@ -215,10 +230,13 @@ class _ListPageState extends State<ListPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 3.0,
-                        ),
-                        Row(
+                      ),
+                      SizedBox(
+                        height: 3.0,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20.0),
+                        child: Row(
                           children: <Widget>[
                             Icon(
                               Icons.school,
@@ -236,10 +254,10 @@ class _ListPageState extends State<ListPage> {
                               ),
                             ),
                           ],
-                        )
-                      ],
-                    )),
-              )
+                        ),
+                      )
+                    ],
+                  ))
             ],
           ),
           Row(
@@ -316,7 +334,6 @@ class _ListPageState extends State<ListPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
                             Flexible(
                               child: FlatButton(
@@ -331,9 +348,15 @@ class _ListPageState extends State<ListPage> {
                               child: FlatButton(
                                 child: Text(
                                   'Filter by',
-                                  style: TextStyle(fontSize: 10.0),
+                                  style: pressed
+                                      ? TextStyle(fontSize: 14.0)
+                                      : TextStyle(fontSize: 10.0),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    pressed = !pressed;
+                                  });
+                                },
                               ),
                             ),
                             Flexible(
@@ -398,7 +421,7 @@ class _ListPageState extends State<ListPage> {
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                                 fontSize: 10, fontWeight: FontWeight.bold)),
-                                SizedBox(height:10.0),
+                        SizedBox(height: 10.0),
                         Row(children: <Widget>[
                           Flexible(
                             child: Row(children: <Widget>[
@@ -414,36 +437,35 @@ class _ListPageState extends State<ListPage> {
                               ),
                             ]),
                           ),
-                          Flexible(child:
-                          Row(children: <Widget>[
-                            Checkbox(
-                                value: true,
-                                activeColor: Colors.grey,
-                                onChanged: (value) {
-                                  setState(() {});
-                                }),
-                            Text(
-                              'Text2',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                          ]),
+                          Flexible(
+                            child: Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text2',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
                           ),
-                          Flexible(child:
-                          Row(children: <Widget>[
-                            Checkbox(
-                                value: true,
-                                activeColor: Colors.grey,
-                                onChanged: (value) {
-                                  setState(() {});
-                                }),
-                            Text(
-                              'Text3',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                          ]),
+                          Flexible(
+                            child: Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text3',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
                           ),
                         ]),
-                        
                         Row(children: <Widget>[
                           Flexible(
                             child: Row(children: <Widget>[
@@ -459,45 +481,47 @@ class _ListPageState extends State<ListPage> {
                               ),
                             ]),
                           ),
-                          Flexible(child:
-                          Row(children: <Widget>[
-                            Checkbox(
-                                value: true,
-                                activeColor: Colors.grey,
-                                onChanged: (value) {
-                                  setState(() {});
-                                }),
-                            Text(
-                              'Text2',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                          ]),
+                          Flexible(
+                            child: Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text2',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
                           ),
-                          Flexible(child:
-                          Row(children: <Widget>[
-                            Checkbox(
-                                value: true,
-                                activeColor: Colors.grey,
-                                onChanged: (value) {
-                                  setState(() {});
-                                }),
-                            Text(
-                              'Text3',
-                              style: TextStyle(fontSize: 10.0),
-                            ),
-                          ]),
+                          Flexible(
+                            child: Row(children: <Widget>[
+                              Checkbox(
+                                  value: true,
+                                  activeColor: Colors.grey,
+                                  onChanged: (value) {
+                                    setState(() {});
+                                  }),
+                              Text(
+                                'Text3',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ]),
                           ),
                         ]),
-                        SizedBox(height: 10.0,),
+                        SizedBox(
+                          height: 10.0,
+                        ),
                         Text('Star Rating',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                  fontSize: 10, fontWeight: FontWeight.bold)),
-                        
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                                fontSize: 10, fontWeight: FontWeight.bold)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            Container(width: 60.0,
+                            Container(
+                              width: 60.0,
                               child: RaisedButton(
                                 color: Colors.white,
                                 child: Text(
@@ -509,7 +533,8 @@ class _ListPageState extends State<ListPage> {
                                 onPressed: () {},
                               ),
                             ),
-                            Container(width: 60.0,
+                            Container(
+                              width: 60.0,
                               child: RaisedButton(
                                 color: Colors.white,
                                 child: Text(
@@ -521,7 +546,8 @@ class _ListPageState extends State<ListPage> {
                                 onPressed: () {},
                               ),
                             ),
-                            Container(width: 60.0,
+                            Container(
+                              width: 60.0,
                               child: RaisedButton(
                                 color: Colors.white,
                                 child: Text(
@@ -535,12 +561,13 @@ class _ListPageState extends State<ListPage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 10.0,),
+                        SizedBox(
+                          height: 10.0,
+                        ),
                         Text('Experience',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                  fontSize: 10.0, fontWeight: FontWeight.bold)),
-                        
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                                fontSize: 10.0, fontWeight: FontWeight.bold)),
                         RangeSlider(
                           min: 0.0,
                           max: 10.0,
@@ -561,13 +588,17 @@ class _ListPageState extends State<ListPage> {
                     ),
                   ),
                   Positioned(
-                      top: -1.0,
-                      right: 3.0,
+                      top: 14.0,
+                      right: 12.0,
                       child: Transform.scale(
                         scale: 0.4,
                         child: FloatingActionButton(
                           backgroundColor: Colors.white,
-                          child: Icon(Icons.close, color: Colors.black),
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.black,
+                            size: 30.0,
+                          ),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
@@ -581,71 +612,72 @@ class _ListPageState extends State<ListPage> {
       ],
     );
     final makeBottom = BottomAppBar(
-            child: Container(
-          height: 80.0,
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-               Container(height: 70.0,width: 70.0,
-                 child: FloatingActionButton(
-                    onPressed: () {},
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.home,
-                         
-                        ),
-                        Text(
-                          "Home",
-                          style: TextStyle(
-                              fontSize: 10.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
+        child: Container(
+      height: 80.0,
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: 50.0,
+            width: 60.0,
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.home,
                   ),
-               ),
-              
-              Padding(padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                  children: <Widget>[
-                    Image.asset(
-                      'images/start.png',
-                      height: 25.0,
-                    ),
-                    Text('Favorites', style: TextStyle(color:Colors.grey[600])),
-                  ],
-                ),
+                  Text(
+                    "Home",
+                    style: TextStyle(
+                        fontSize: 10.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: <Widget>[
-                    Image.asset('images/reports.png', height: 25.0),
-                    Text('Reports', style: TextStyle(color: Colors.grey[600]))
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: <Widget>[
-                    Image.asset('images/patients.png', height: 25.0),
-                    Text(
-                      'Patients',
-                      style: TextStyle(color: Colors.grey[600]),
-                    )
-                  ],
-                ),
-              )
-            ],
+            ),
           ),
-        ));
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: <Widget>[
+                Image.asset(
+                  'images/start.png',
+                  height: 25.0,
+                ),
+                Text('Favorites', style: TextStyle(color: Colors.grey[600])),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: <Widget>[
+                Image.asset('images/reports.png', height: 25.0),
+                Text('Reports', style: TextStyle(color: Colors.grey[600]))
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: <Widget>[
+                Image.asset('images/patients.png', height: 25.0),
+                Text(
+                  'Patients',
+                  style: TextStyle(color: Colors.grey[600]),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    ));
 
     return Scaffold(
       backgroundColor: Colors.grey[100],

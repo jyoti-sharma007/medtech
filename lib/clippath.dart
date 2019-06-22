@@ -37,23 +37,25 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
               clipper: BottomWaveClipper(),
             ),
             Positioned(
-              left: 20.0,
-              top: 55.0,
-              child: Icon(Icons.menu, color: Colors.white),
-              height: MediaQuery.of(context).size.width * 0.15,
+              left: 30.0,
+              top: 80.0,
+              child: Image.asset("images/hamburger.png",
+                  height: MediaQuery.of(context).size.width * 0.05),
             ),
             Positioned(
               left: 70.0,
               top: 60.0,
-              height: MediaQuery.of(context).size.width * 0.15,
+              height: MediaQuery.of(context).size.height * 0.08,
               width: MediaQuery.of(context).size.width * 0.75,
               child: Container(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.only(bottom:06.0),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     color: Colors.white),
                 child: ListTile(
-                  trailing: Icon(Icons.search, color: Colors.blue),
+                  
+                  trailing: Icon(Icons.search, color: Colors.blue,size: 20.0,),
+                  
                   title: TextField(
                     decoration: InputDecoration(
                         hintText: 'Search here', border: InputBorder.none),
@@ -63,7 +65,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                 top: 150.0,left: 30.0,right: 30.0,bottom: 30.0),
+                  top: 150.0, left: 30.0, right: 30.0, bottom: 30.0),
               child: Container(
                   width: MediaQuery.of(context).size.width * 0.40,
                   height: MediaQuery.of(context).size.height * 0.28,
@@ -93,7 +95,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 150.0,left: 190.0,right: 30.0,bottom: 30.0),
+                  top: 150.0, left: 190.0, right: 30.0, bottom: 30.0),
               child: Container(
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: MediaQuery.of(context).size.height * 0.28,
@@ -121,7 +123,7 @@ class WavyHeaderImageState extends State<WavyHeaderImage> {
             ),
             Padding(
                 padding:
-                    const EdgeInsets.only(top: 340.0,left: 190.0,right: 30.0),
+                    const EdgeInsets.only(top: 340.0, left: 190.0, right: 30.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: MediaQuery.of(context).size.height * 0.28,
