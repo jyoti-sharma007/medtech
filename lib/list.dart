@@ -27,14 +27,7 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  bool pressed = false;
-
   List lessons;
-  double _lowerValue = 200.0;
-  double _upperValue = 400.0;
-  double _lowerAge = 2.0;
-  double _upperAge = 7.0;
-
   @override
   void initState() {
     lessons = getLessons();
@@ -296,7 +289,9 @@ class _ListPageState extends State<ListPage> {
           margin: new EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           child: Container(
             decoration: BoxDecoration(color: Colors.white),
+            
             child: makeListTile(lesson),
+
           ),
         );
 
@@ -320,297 +315,17 @@ class _ListPageState extends State<ListPage> {
       ),
       actions: <Widget>[
         IconButton(
-          icon: Image.asset('images/filter.png', height: 30.0),
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                // return object of type Dialog
-                return Stack(children: <Widget>[
-                  AlertDialog(
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Flexible(
-                              child: FlatButton(
-                                child: Text(
-                                  'Reset',
-                                  style: TextStyle(fontSize: 10.0),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                            Flexible(
-                              child: FlatButton(
-                                child: Text(
-                                  'Filter by',
-                                  style: pressed
-                                      ? TextStyle(fontSize: 14.0)
-                                      : TextStyle(fontSize: 10.0),
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    pressed = !pressed;
-                                  });
-                                },
-                              ),
-                            ),
-                            Flexible(
-                              child: FlatButton(
-                                child: Text(
-                                  'Apply',
-                                  style: TextStyle(
-                                      fontSize: 10.0, color: Colors.blue),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Price Range',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                              fontSize: 10.0, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10.0),
-                        RangeSlider(
-                          min: 0.0,
-                          max: 1000.0,
-                          lowerValue: _lowerValue,
-                          upperValue: _upperValue,
-                          divisions: 5,
-                          showValueIndicator: true,
-                          valueIndicatorMaxDecimals: 1,
-                          onChanged:
-                              (double newLowerValue, double newUpperValue) {
-                            setState(() {
-                              _lowerValue = newLowerValue;
-                              _upperValue = newUpperValue;
-                            });
-                          },
-                        ),
-                        Text(
-                          'Nurse Type',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 10.0),
-                        ),
-                        SizedBox(height: 10.0),
-                        Row(children: <Widget>[
-                          Checkbox(
-                            value: true,
-                            checkColor: Colors.grey[400],
-                            activeColor: Colors.grey[200],
-                            onChanged: (value) {
-                              setState(() {});
-                            },
-                          ),
-                          Text('Certified'),
-                        ]),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        SizedBox(height: 10.0),
-                        Text('Specialisation',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                        SizedBox(height: 10.0),
-                        Row(children: <Widget>[
-                          Flexible(
-                            child: Row(children: <Widget>[
-                              Checkbox(
-                                  value: true,
-                                  activeColor: Colors.grey,
-                                  onChanged: (value) {
-                                    setState(() {});
-                                  }),
-                              Text(
-                                'Text1',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                            ]),
-                          ),
-                          Flexible(
-                            child: Row(children: <Widget>[
-                              Checkbox(
-                                  value: true,
-                                  activeColor: Colors.grey,
-                                  onChanged: (value) {
-                                    setState(() {});
-                                  }),
-                              Text(
-                                'Text2',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                            ]),
-                          ),
-                          Flexible(
-                            child: Row(children: <Widget>[
-                              Checkbox(
-                                  value: true,
-                                  activeColor: Colors.grey,
-                                  onChanged: (value) {
-                                    setState(() {});
-                                  }),
-                              Text(
-                                'Text3',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                            ]),
-                          ),
-                        ]),
-                        Row(children: <Widget>[
-                          Flexible(
-                            child: Row(children: <Widget>[
-                              Checkbox(
-                                  value: true,
-                                  activeColor: Colors.grey,
-                                  onChanged: (value) {
-                                    setState(() {});
-                                  }),
-                              Text(
-                                'Text1',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                            ]),
-                          ),
-                          Flexible(
-                            child: Row(children: <Widget>[
-                              Checkbox(
-                                  value: true,
-                                  activeColor: Colors.grey,
-                                  onChanged: (value) {
-                                    setState(() {});
-                                  }),
-                              Text(
-                                'Text2',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                            ]),
-                          ),
-                          Flexible(
-                            child: Row(children: <Widget>[
-                              Checkbox(
-                                  value: true,
-                                  activeColor: Colors.grey,
-                                  onChanged: (value) {
-                                    setState(() {});
-                                  }),
-                              Text(
-                                'Text3',
-                                style: TextStyle(fontSize: 10.0),
-                              ),
-                            ]),
-                          ),
-                        ]),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text('Star Rating',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Container(
-                              width: 60.0,
-                              child: RaisedButton(
-                                color: Colors.white,
-                                child: Text(
-                                  '3 star',
-                                  style: TextStyle(
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                            Container(
-                              width: 60.0,
-                              child: RaisedButton(
-                                color: Colors.white,
-                                child: Text(
-                                  '4 star',
-                                  style: TextStyle(
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                            Container(
-                              width: 60.0,
-                              child: RaisedButton(
-                                color: Colors.white,
-                                child: Text(
-                                  '5 star',
-                                  style: TextStyle(
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onPressed: () {},
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text('Experience',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                                fontSize: 10.0, fontWeight: FontWeight.bold)),
-                        RangeSlider(
-                          min: 0.0,
-                          max: 10.0,
-                          lowerValue: _lowerAge,
-                          upperValue: _upperAge,
-                          divisions: 5,
-                          showValueIndicator: true,
-                          valueIndicatorMaxDecimals: 1,
-                          onChanged:
-                              (double newLowerValue, double newUpperValue) {
-                            setState(() {
-                              _lowerAge = newLowerValue;
-                              _upperAge = newUpperValue;
-                            });
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                      top: 14.0,
-                      right: 12.0,
-                      child: Transform.scale(
-                        scale: 0.4,
-                        child: FloatingActionButton(
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            Icons.close,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ))
-                ]);
-              },
-            );
-          },
-        )
+            icon: Image.asset('images/filter.png', height: 30.0),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => AlertBox());
+            }),
       ],
     );
+
+    // return object of type Dialog
+
     final makeBottom = BottomAppBar(
         child: Container(
       height: 80.0,
@@ -754,4 +469,310 @@ List getLessons() {
         specialization: "specialization1",
         doctor: 13),
   ];
+}
+
+class AlertBox extends StatefulWidget {
+  @override
+  _AlertBoxState createState() => _AlertBoxState();
+}
+
+class _AlertBoxState extends State<AlertBox> {
+  bool pressed = false;
+    bool text1 = false;
+    bool text2 = false;
+    bool text3 = false;
+    bool text4 = false;
+    bool text5 = false;
+    bool text6 = false;
+    double _lowerValue = 200.0;
+    double _upperValue = 400.0;
+    double _lowerAge = 2.0;
+    double _upperAge = 7.0;
+  @override
+  Widget build(BuildContext context) {
+    
+
+  
+
+    return Stack(children: <Widget>[
+      AlertDialog(
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Flexible(
+                  child: FlatButton(
+                    child: Text(
+                      'Reset',
+                      style: TextStyle(fontSize: 08.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Flexible(
+                  child: FlatButton(
+                    child: Text(
+                      'Filter by',
+                      style: pressed
+                          ? TextStyle(fontSize: 12.0)
+                          : TextStyle(fontSize: 08.0),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        pressed = !pressed;
+                      });
+                    },
+                  ),
+                ),
+                Flexible(
+                  child: FlatButton(
+                    child: Text(
+                      'Apply',
+                      style: TextStyle(fontSize: 08.0, color: Colors.blue),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Price Range',
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10.0),
+            RangeSlider(
+              min: 0.0,
+              max: 1000.0,
+              lowerValue: _lowerValue,
+              upperValue: _upperValue,
+              divisions: 5,
+              showValueIndicator: true,
+              valueIndicatorMaxDecimals: 1,
+              onChanged: (double newLowerValue, double newUpperValue) {
+                setState(() {
+                  _lowerValue = newLowerValue;
+                  _upperValue = newUpperValue;
+                });
+              },
+            ),
+            Text(
+              'Nurse Type',
+              textAlign: TextAlign.justify,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10.0),
+            ),
+            SizedBox(height: 10.0),
+            Row(children: <Widget>[
+              Checkbox(
+                value: true,
+                checkColor: Colors.grey[400],
+                activeColor: Colors.grey[200],
+                onChanged: (value) {
+                  setState(() {});
+                },
+              ),
+              Text('Certified'),
+            ]),
+            SizedBox(
+              height: 10.0,
+            ),
+            SizedBox(height: 10.0),
+            Text('Specialisation',
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+            SizedBox(height: 10.0),
+            Row(children: <Widget>[
+              Flexible(
+                child: Row(children: <Widget>[
+                  Checkbox(
+                      value: text1,
+                      activeColor: Colors.grey,
+                      onChanged: (bool value) {
+                        setState(() {
+                     text1 = value;
+                        });
+                      }),
+                  Text(
+                    'Text1',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ]),
+              ),
+              Flexible(
+                child: Row(children: <Widget>[
+                  Checkbox(
+                      value: text2,
+                      activeColor: Colors.grey,
+                      onChanged: (bool value) {
+                        setState(() {
+                          text2 = value;
+                        });
+                      }),
+                  Text(
+                    'Text2',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ]),
+              ),
+              Flexible(
+                child: Row(children: <Widget>[
+                  Checkbox(
+                      value: text3,
+                      activeColor: Colors.grey,
+                      onChanged: (bool value) {
+                        setState(() {
+                          text3= value;
+                        });
+                      }),
+                  Text(
+                    'Text3',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ]),
+              ),
+            ]),
+            Row(children: <Widget>[
+              Flexible(
+                child: Row(children: <Widget>[
+                  Checkbox(
+                      value: text4,
+                      activeColor: Colors.grey,
+                      onChanged: (bool value) {
+                        setState(() {
+                          text4 =value;
+                        });
+                      }),
+                  Text(
+                    'Text1',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ]),
+              ),
+              Flexible(
+                child: Row(children: <Widget>[
+                  Checkbox(
+                      value: text5,
+                      activeColor: Colors.grey,
+                      onChanged: (bool value) {
+                        setState(() {
+                          text5 =value;
+                        });
+                      }),
+                  Text(
+                    'Text2',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ]),
+              ),
+              Flexible(
+                child: Row(children: <Widget>[
+                  Checkbox(
+                      value: text6,
+                      activeColor: Colors.grey,
+                      onChanged: (bool value) {
+                        setState(() {
+                          text6 =value;
+                        });
+                      }),
+                  Text(
+                    'Text3',
+                    style: TextStyle(fontSize: 10.0),
+                  ),
+                ]),
+              ),
+            ]),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text('Star Rating',
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Container(
+                  width: 60.0,
+                  child: RaisedButton(
+                    color: Colors.white,
+                    child: Text(
+                      '3 star',
+                      style: TextStyle(
+                          fontSize: 10.0, fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  width: 60.0,
+                  child: RaisedButton(
+                    color: Colors.white,
+                    child: Text(
+                      '4 star',
+                      style: TextStyle(
+                          fontSize: 10.0, fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  width: 60.0,
+                  child: RaisedButton(
+                    color: Colors.white,
+                    child: Text(
+                      '5 star',
+                      style: TextStyle(
+                          fontSize: 10.0, fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {},
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text('Experience',
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.bold)),
+            RangeSlider(
+              min: 0.0,
+              max: 10.0,
+              lowerValue: _lowerAge,
+              upperValue: _upperAge,
+              divisions: 5,
+              showValueIndicator: true,
+              valueIndicatorMaxDecimals: 1,
+              onChanged: (double newLowerValue, double newUpperValue) {
+                setState(() {
+                  _lowerAge = newLowerValue;
+                  _upperAge = newUpperValue;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
+      Positioned(
+          top: 14.0,
+          right: 12.0,
+          child: Transform.scale(
+            scale: 0.4,
+            child: FloatingActionButton(
+              backgroundColor: Colors.white,
+              child: Icon(
+                Icons.close,
+                color: Colors.black,
+                size: 30.0,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ))
+    ]);
+  }
 }
